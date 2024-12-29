@@ -1,0 +1,53 @@
+@media screen and (min-width: 640px) {
+    body {
+        min-width: 640px;
+    }
+}
+
+body {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+/* Stabilize against user agent vagaries overriding inheritance */
+table {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.dbc-index {
+    padding: 12px;
+}
+.dbc-formtable {
+    border-width: 1px;
+    border-style: solid;
+    border-collapse: separate;
+    border-radius: 10px;
+    border-spacing: 0;
+    padding: 5px;
+    background-color: #f4f4f4;
+}
+.dbc-formtable input {
+    width: 90px;
+}
+.dbc-formtable-section {
+    text-decoration:underline;
+    font-weight: bold;
+}
+.dbc-formtable-second {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+}
+.dbc-formtable-second > table {
+    height: 100%;
+}
+.dbc-centercell {
+    text-align: center; 
+}
+.dbc-rightcell {
+    text-align: center; 
+}
+.dbc-nobr {
+    white-space: nowrap;
+}

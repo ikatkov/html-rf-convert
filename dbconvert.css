@@ -4,20 +4,25 @@
     }
 }
 
+/* Base styles */
 body {
     font-size: 14px;
     line-height: 20px;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
 
-/* Stabilize against user agent vagaries overriding inheritance */
 table {
     font-size: inherit;
     line-height: inherit;
+    width: 100%;
 }
 
 .dbc-index {
     padding: 12px;
 }
+
 .dbc-formtable {
     border-width: 1px;
     border-style: solid;
@@ -26,28 +31,69 @@ table {
     border-spacing: 0;
     padding: 5px;
     background-color: #f4f4f4;
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
 }
+
 .dbc-formtable input {
     width: 90px;
+    box-sizing: border-box;
 }
+
 .dbc-formtable-section {
-    text-decoration:underline;
+    text-decoration: underline;
     font-weight: bold;
 }
+
 .dbc-formtable-second {
     display: table-cell;
     vertical-align: middle;
     text-align: left;
 }
+
 .dbc-formtable-second > table {
     height: 100%;
 }
+
 .dbc-centercell {
-    text-align: center; 
+    text-align: center;
 }
+
 .dbc-rightcell {
-    text-align: center; 
+    text-align: center;
 }
+
 .dbc-nobr {
     white-space: nowrap;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 640px) {
+    .dbc-formtable {
+        border-radius: 0;
+        padding: 10px;
+    }
+
+    .dbc-formtable-second {
+        display: block;
+        width: 100%;
+    }
+
+    .dbc-formtable-second > table {
+        width: 100%;
+    }
+
+    .dbc-centercell {
+        text-align: center;
+        width: 100%;
+    }
+
+    .dbc-rightcell {
+        text-align: left;
+    }
+
+    .dbc-formtable input {
+        width: 100%;
+    }
 }

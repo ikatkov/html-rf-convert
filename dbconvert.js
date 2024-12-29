@@ -17,6 +17,7 @@ function parseAll(f) {
 
 function update_vpeak2peak(f) {
     parseAll(f);
+    vpeak = vpeak/2;
     update(f);
 }
 
@@ -108,8 +109,8 @@ function nc(el) {
 
 function init() {
     preset(document.forms.convert);
-    update_vpeak(document.forms.convert);
-    vgain_changed(document.forms.convert);
+    update_vpeak2peak(document.forms.convert);
+    // vgain_changed(document.forms.convert);
 }
 
 if (window.attachEvent)

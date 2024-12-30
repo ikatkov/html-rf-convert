@@ -17,7 +17,7 @@ function parseAll(f) {
 
 function update_vpeak2peak(f) {
     parseAll(f);
-    vpeak = vpeak/2;
+    vpeak = vpeak2peak/2;
     update(f);
 }
 

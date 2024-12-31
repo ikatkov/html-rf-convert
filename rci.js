@@ -112,40 +112,58 @@ function truncate(n) {
 	else return Math.ceil(n);
 }
 
-function pretty(n,d) {
-	if (n == 0) return "0";
-	if (isNaN(n)) return n+"";
-	if ((n+"").indexOf("Inf") >= 0) return n+"";
+function pretty(n, d) {
+    if (n === 0) return "0";
+    if (isNaN(n)) return n + "";
+    if ((n + "").indexOf("Inf") >= 0) return n + "";
 
-	var exp = Math.floor(log10(n));
-	if (exp < -99) return "0";
+    // Ensure we use Math.log10 safely
+    function log10(x) {
+        return Math.log(x) / Math.LN10;
+    }
 
-	var nm = mantissa(n)+(n>0?5:-5)*Math.pow(10,-d);
-	if (Math.abs(nm) >= 10) { nm /= 10; exp += 1; }
+    function truncate(num) {
+        return Math[num < 0 ? "ceil" : "floor"](num);
+    }
 
-	var s=0;
-	if (n < 0) s=1;
+    function ntz(str) {
+        return str.replace(/\.0+$|\.(\d*?)0+$/, ".$1").replace(/\.$/, "");
+    }
 
-	var ns = truncate(nm*Math.pow(10,d-1))*Math.pow(10,exp-d+1)+"";
-	result="";
-	if ( exp > 3 || exp < -3 ||
-	 ns.indexOf("e") > 0 || ns.indexOf("E") > 0 ) {
+    function mantissa(num) {
+        return num / Math.pow(10, Math.floor(log10(Math.abs(num))));
+    }
 
-	var nms = nm+"";
-	if (nms.substring(0,1) == ".") nms = "0"+nms;
-	if (nms.substring(0,2) == "-.") nms = "-0"+nms.substring(1);
+    var exp = Math.floor(log10(Math.abs(n)));
+    if (exp < -99) return "0";
 
-	result = ntz(nms.substring(0,d+s+1))+"e"+exp;
-	}
-	else {
-	if (ns.substring(0,1) == ".") ns = "0"+ns;
-	if (ns.substring(0,2) == "-.") ns = "-0"+ns.substring(1);
+    var nm = mantissa(n) * Math.pow(10, d);
+    nm = Math.round(nm) / Math.pow(10, d);
+    if (Math.abs(nm) >= 10) {
+        nm /= 10;
+        exp += 1;
+    }
 
-	if (exp < 0)	result = ntz(ns.substring(0,-exp+d+s+1));
-	else		result = ntz(ns.substring(0,Math.max(exp+s+1,d+s+1)));
-	}
-	return result;
+    var s = n < 0 ? 1 : 0;
+    var ns = (nm * Math.pow(10, d - 1) * Math.pow(10, exp - d + 1)).toFixed(d);
+
+    let result = "";
+    if (exp > 3 || exp < -3) {
+        let nms = nm.toFixed(d);
+        if (nms.substring(0, 1) === ".") nms = "0" + nms;
+        if (nms.substring(0, 2) === "-.") nms = "-0" + nms.substring(1);
+
+        result = ntz(nms) + "e" + exp;
+    } else {
+        if (ns.substring(0, 1) === ".") ns = "0" + ns;
+        if (ns.substring(0, 2) === "-.") ns = "-0" + ns.substring(1);
+
+        if (exp < 0) result = ntz(ns.substring(0, -exp + d + s));
+        else result = ntz(ns.substring(0, Math.max(exp + s + 1, d + s)));
+    }
+    return result;
 }
+
 
 // pretty_abs returns a string truncated to an absolute precision, rather
 // than a relative number of decimal places.

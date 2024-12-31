@@ -6,7 +6,8 @@ function parseAll(f) {
     vpeak2peak = Math.abs(parseFloat(f.vpeak2peak.value));
     vpeak = Math.abs(parseFloat(f.vpeak.value));
     vrms = Math.abs(parseFloat(f.vrms.value));
-    power = Math.abs(parseFloat(f.power.value)) * 1e-3;
+    power = Math.abs(parseFloat(f.power.value));
+    // power = Math.abs(parseFloat(f.power.value)) * 1e-3;
     dBm = parseFloat(f.dBm.value);
     dBu = parseFloat(f.dBu.value);
     dBV = parseFloat(f.dBV.value);
@@ -66,12 +67,13 @@ function update_z0(f) {
 }
 
 function update(f) {
-    f.vpeak2peak.value = vpeak2peak;
-    f.vpeak.value = vpeak;
+    f.vpeak2peak.value = pretty(vpeak2peak,4);
+    f.vpeak.value = pretty(vpeak,4);
 
     vrms = (vpeak / Math.sqrt(2)) / Math.pow(10, correction / 20);
     f.vrms.value = pretty(vrms, 4);
-    f.power.value = pretty(1000 * vrms * vrms / z0, 4);
+    f.power.value = pretty(vrms * vrms / z0, 4);
+    //f.power.value = pretty(1000 * vrms * vrms / z0, 4);
     dBm = log10(1e3 * vrms * vrms / z0) * 10;
     f.dBm.value = pretty(dBm, 4);
     dBu = log10(vrms / dBu0) * 20;

@@ -1,6 +1,34 @@
+/* Responsive styles */
+@media screen and (max-width: 640px) {
+    body {
+        font-size: 64px;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .dbc-formtable {
+        padding: 32px;
+        border-radius: 0;
+        max-width: 100%;
+        box-shadow: none;
+    }
+
+    .dbc-formtable input {
+        font-size: 32px;
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .dbc-formtable select {
+        width: 100%;
+        font-size: 32px;
+    }
+}
+
+
 /* Base styles */
 body {
-    font-size: 32px;
+    /* font-size: 32px; */
     line-height: 1.5;
     margin: 0;
     padding: 20px;
@@ -31,7 +59,7 @@ table {
     padding: 8px 12px;
     border: 2px solid #e2e8f0;
     border-radius: 6px;
-    font-size: 24px;
+    /* font-size: 24px; */
     background-color: #f8fafc;
     color: #2d3748;
     margin-right: 8px;
@@ -47,7 +75,7 @@ table {
 .dbc-formtable-section {
     text-decoration: none;
     font-weight: 600;
-    font-size: 1.1em;
+    /* font-size: 1.1em; */
     color: #4a5568;
     margin: 16px 0 8px;
     padding-bottom: 8px;
@@ -63,7 +91,7 @@ table {
     padding: 8px 12px;
     border: 1px solid #e2e8f0;
     border-radius: 6px;
-    font-size: 24px;
+    /* font-size: 24px; */
     background-color: white;
     min-width: 200px;
 }
@@ -80,29 +108,7 @@ table {
     vertical-align: middle;
 }
 
-/* Responsive styles */
-@media screen and (max-width: 640px) {
-    body {
-        padding: 0;
-        margin: 0;
-    }
-    
-    .dbc-formtable {
-        padding: 16px;
-        border-radius: 0;
-        max-width: 100%;
-        box-shadow: none;
-    }
 
-    .dbc-formtable input {
-        width: 100%;
-        margin-right: 0;
-    }
-
-    .dbc-formtable select {
-        width: 100%;
-    }
-}
 
 /* Animation for value changes */
 @keyframes valueChange {

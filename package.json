@@ -1,11 +1,11 @@
 {
-  "name": "morse-code-cheatsheet",
-  "version": "1.0.11",
-  "description": "A static HTML page project with Semantic Release",
-  "main": "index.html",
+  "name": "html-rf-convert",
+  "version": "1.0.1",
+  "description": "A static HTML page VRMS/dBm calculator with Semantic Release",
+  "main": "dbconvert.html",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ikatkov/morse-code.git"
+    "url": "https://github.com/ikatkov/html-rf-convert.git"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.3",

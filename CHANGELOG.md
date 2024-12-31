@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/ikatkov/html-rf-convert/compare/v1.0.2...v1.1.0) (2024-12-31)
+
+
+### Features
+
+* add ios icon ([ebe54c4](https://github.com/ikatkov/html-rf-convert/commit/ebe54c4ba84cda03777c934c76ad2a0fe1017b53))
+
 ## [1.0.2](https://github.com/ikatkov/html-rf-convert/compare/v1.0.1...v1.0.2) (2024-12-31)
 
 

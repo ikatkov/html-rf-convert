@@ -1,0 +1,8 @@
+{
+  "name": "Scratch pad for all static websites",
+  "short_name": "Static page",
+  "start_url": "/github-static-web-scratchpad/index.html?version=1.0.0",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000"
+}

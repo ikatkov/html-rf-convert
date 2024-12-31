@@ -81,7 +81,9 @@ table {
     vertical-align: middle;
 }
 
-
+.small-sub {
+    font-size: 0.6em;
+}
 
 
 /* Animation for value changes */

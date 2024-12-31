@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/ikatkov/html-rf-convert/compare/v1.0.1...v1.0.2) (2024-12-31)
+
+
+### Bug Fixes
+
+* attempt to control mobile font size, not working ([ab27ffc](https://github.com/ikatkov/html-rf-convert/commit/ab27ffc85a989ad51d66703dfd349c27757367e3))
+
 ## [1.0.1](https://github.com/ikatkov/html-rf-convert/compare/v1.0.0...v1.0.1) (2024-12-31)
 
 

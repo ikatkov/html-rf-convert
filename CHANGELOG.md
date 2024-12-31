@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/ikatkov/html-rf-convert/compare/v1.1.1...v1.1.2) (2024-12-31)
+
+
+### Bug Fixes
+
+* change short_name in manifest ([49e4a18](https://github.com/ikatkov/html-rf-convert/commit/49e4a188b97dc77e9871667ddbe25faa59de6714))
+
 ## [1.1.1](https://github.com/ikatkov/html-rf-convert/compare/v1.1.0...v1.1.1) (2024-12-31)
 
 

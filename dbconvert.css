@@ -1,6 +1,6 @@
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 400px) {
     body {
-        min-width: 640px;
+        min-width: 400px;
     }
 }
 
@@ -32,7 +32,7 @@ table {
     padding: 5px;
     background-color: #f4f4f4;
     width: 100%;
-    max-width: 640px;
+    max-width: 400px;
     margin: 0 auto;
 }
 

@@ -1,5 +1,4 @@
-﻿
-var vpeak2peak, vpeak, vrms, power, dBm, dBu, dBV, z0, correction;
+﻿var vpeak2peak, vpeak, vrms, power, dBm, dBu, dBV, z0, correction;
 
 
 function log10(x) {
@@ -117,21 +116,52 @@ function update_z0(f) {
     update_vpeak(f);
 }
 
+function addChangeAnimation(element, value) {
+    // Remove any existing animations
+    element.classList.remove('value-changed', 'error-changed');
+    
+    // Add appropriate animation class
+    if (value === "NaN" || isNaN(value)) {
+        element.classList.add('error-changed');
+    } else {
+        element.classList.add('value-changed');
+    }
+
+    // Remove class after animation completes
+    element.addEventListener('animationend', () => {
+        element.classList.remove('value-changed', 'error-changed');
+    }, {once: true});
+}
+
 function update(f) {
+    const prevValues = {
+        vpeak2peak: f.vpeak2peak.value,
+        vpeak: f.vpeak.value,
+        vrms: f.vrms.value,
+        power: f.power.value,
+        dBm: f.dBm.value,
+        dBu: f.dBu.value,
+        dBV: f.dBV.value
+    };
+
     f.vpeak2peak.value = pretty(vpeak2peak,4);
     f.vpeak.value = pretty(vpeak,4);
 
     vrms = (vpeak / Math.sqrt(2)) / Math.pow(10, correction / 20);
     f.vrms.value = pretty(vrms, 4);
     f.power.value = pretty(vrms * vrms / z0, 4);
-    //f.power.value = pretty(1000 * vrms * vrms / z0, 4);
     dBm = log10(1e3 * vrms * vrms / z0) * 10;
     f.dBm.value = pretty(dBm, 4);
     dBu = log10(vrms / dBu0) * 20;
-    // log10(1e6*vrms*vrms/z0)*10;
     f.dBu.value = pretty(dBu, 4);
-    dBV = log10(vrms) * 20;	// log10(1e6*vrms)
+    dBV = log10(vrms) * 20;
     f.dBV.value = pretty(dBV, 4);
+
+    Object.keys(prevValues).forEach(key => {
+        if (prevValues[key] !== f[key].value) {
+            addChangeAnimation(f[key], f[key].value);
+        }
+    });
 }
 
 var db_per_neper = (20 / Math.log(10));

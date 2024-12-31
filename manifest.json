@@ -1,7 +1,7 @@
 {
   "name": "VRMS/dBm calculator",
   "short_name": "Static page",
-  "start_url": "/morse-code/?version=1.0.0",
+  "start_url": "/html-rf-convert/dbconvert.html?version=1.0.1",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000"

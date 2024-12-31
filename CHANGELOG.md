@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/ikatkov/html-rf-convert/compare/v1.0.0...v1.0.1) (2024-12-31)
+
+
+### Bug Fixes
+
+* update html ([8c8d282](https://github.com/ikatkov/html-rf-convert/commit/8c8d2821081256ad1da3450fc3646d0eab6afc08))
+
 # 1.0.0 (2024-12-31)
 
 

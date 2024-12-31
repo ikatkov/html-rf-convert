@@ -1,6 +1,6 @@
 {
   "name": "html-rf-convert",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A static HTML page VRMS/dBm calculator with Semantic Release",
   "main": "dbconvert.html",
   "repository": {

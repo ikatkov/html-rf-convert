@@ -15,101 +15,8 @@ function trim(s) {
   return s;
 }
 
-function select(s,index) {
-	for (var i=0; i < s.options.length; i++)
-	s.options[i].selected = (i==index);
-
-	s.options[index].selected = true;
-}
-function select_name(s, name) {
-	for (var i=0; i<s.options.length; i++)
-	if (s.options[i].value.toLowerCase() == name.toLowerCase()) {
-		select(s, i);
-		break;
-	}
-}
-
 function log10(x) {
 	return Math.log(Math.abs(x))/Math.LN10;
-}
-
-var COMPONENT_INFINITY = 1e15;
-function parseFloatBlankInf(arg) {
-  var argt = trim(arg.toLowerCase());
-  if (	argt.length == 0 ||
-	argt.indexOf("inf") >= 0 ||
-  	argt == "na" || argt == "n/a" ||
-  	argt == "ns" || argt == "n/s" ) return COMPONENT_INFINITY;
-  return parseFloat(argt);
-}
-
-function parseFloatBlankZero(arg) {
-  var argt = trim(arg.toLowerCase());
-  if (	argt == "na" || argt == "n/a" ||
-  	argt == "ns" || argt == "n/s" ) return 0;
-  if (argt.length == 0) return 0;
-  return parseFloat(argt);
-}
-
-// Form elements with units
-
-function parseFloatUnits(element) {
-  var val = parseFloat(element.value);
-  if (element.units != null) val *= element.units;
-  return val;
-}
-
-function parseFloatUnitsBlankZero(element) {
-  var val = parseFloatBlankZero(element.value);
-  if (element.units != null) val *= element.units;
-  return val;
-}
-
-function parseFloatUnitsBlankInf(element) {
-  var val = parseFloatBlankInf(element.value);
-  if (element.units != null) val *= element.units;
-  return val;
-}
-
-function setValueUnits(element,value,precision) {
-if (debug) alert("setValueUnits "+element+" "+element.name+" "+element.value);
-  if (element.options) {
-  	select_name(element,value+"");
-  }
-  else {
-    if (isNaN(parseFloat(value))) element.value = value;
-    else {
-    	if (element.units != null) value /= element.units;
-	element.value = pretty(value,precision);
-    }
-  }
-}
-
-function mantissa(x) {
-	if (x == 0) return x;
-	return x/Math.pow(10,Math.floor(log10(x)));
-}
-
-function ntz(s) {
-	var d = s.indexOf(".");
-	if ( d<0 ) return s;
-	var e = s.indexOf("e");
-	if ( e<0 ) e = s.indexOf("E");
-	if ( e>=0 ) return s;
-
-	while (s.length > 0) {
-	var z = s.lastIndexOf("0");
-	if (z < s.length-1) break;
-	s = s.substring(0,z);
-	}
-	if (s.lastIndexOf(".") == (s.length-1)) s = s.substring(0,s.length-1);
-
-	return s;
-}
-
-function truncate(n) {
-	if (n >= 0) return Math.floor(n);
-	else return Math.ceil(n);
 }
 
 function pretty(n, d) {
@@ -117,7 +24,6 @@ function pretty(n, d) {
     if (isNaN(n)) return n + "";
     if ((n + "").indexOf("Inf") >= 0) return n + "";
 
-    // Ensure we use Math.log10 safely
     function log10(x) {
         return Math.log(x) / Math.LN10;
     }

@@ -6,11 +6,13 @@
 
 /* Base styles */
 body {
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 16px;
+    line-height: 1.5;
     margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    background-color: #f5f7fa;
+    color: #2d3748;
 }
 
 table {
@@ -19,81 +21,86 @@ table {
     width: 100%;
 }
 
-.dbc-index {
-    padding: 12px;
-}
-
 .dbc-formtable {
-    border-width: 1px;
-    border-style: solid;
-    border-collapse: separate;
-    border-radius: 10px;
-    border-spacing: 0;
-    padding: 5px;
-    background-color: #f4f4f4;
+    border: none;
+    border-radius: 12px;
+    padding: 24px;
+    background-color: white;
     width: 100%;
-    max-width: 400px;
+    max-width: 480px;
     margin: 0 auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .dbc-formtable input {
-    width: 90px;
-    box-sizing: border-box;
+    width: 120px;
+    padding: 8px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    margin-right: 8px;
+}
+
+.dbc-formtable input:focus {
+    outline: none;
+    border-color: #4299e1;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
 }
 
 .dbc-formtable-section {
-    text-decoration: underline;
-    font-weight: bold;
-}
-
-.dbc-formtable-second {
-    display: table-cell;
-    vertical-align: middle;
-    text-align: left;
-}
-
-.dbc-formtable-second > table {
-    height: 100%;
-}
-
-.dbc-centercell {
-    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    color: #4a5568;
+    margin: 16px 0 8px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e2e8f0;
 }
 
 .dbc-rightcell {
     text-align: center;
 }
 
-.dbc-nobr {
-    white-space: nowrap;
+/* Dropdown select */
+.dbc-formtable select {
+    padding: 8px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: white;
+    min-width: 200px;
+}
+
+.dbc-formtable select:focus {
+    outline: none;
+    border-color: #4299e1;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
+}
+
+/* Table cells */
+.dbc-formtable td {
+    padding: 8px 4px;
+    vertical-align: middle;
 }
 
 /* Responsive styles */
 @media screen and (max-width: 640px) {
+    body {
+        padding: 12px;
+    }
+    
     .dbc-formtable {
-        border-radius: 0;
-        padding: 10px;
-    }
-
-    .dbc-formtable-second {
-        display: block;
-        width: 100%;
-    }
-
-    .dbc-formtable-second > table {
-        width: 100%;
-    }
-
-    .dbc-centercell {
-        text-align: center;
-        width: 100%;
-    }
-
-    .dbc-rightcell {
-        text-align: left;
+        padding: 16px;
+        border-radius: 8px;
     }
 
     .dbc-formtable input {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .dbc-formtable select {
         width: 100%;
     }
 }

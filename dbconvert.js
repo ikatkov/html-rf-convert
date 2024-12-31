@@ -1,5 +1,4 @@
 ﻿
-var version = "0.9.4";
 var vpeak2peak, vpeak, vrms, power, dBm, dBu, dBV, z0, correction;
 
 function parseAll(f) {

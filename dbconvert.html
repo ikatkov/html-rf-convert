@@ -1,4 +1,5 @@
-<html lang="en"><head>
+<html lang="en">
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
     <title>Utilities:VRMS/dBm/dBu/dBV calculators</title>
     <link href="dbconvert.css" rel="stylesheet">
@@ -7,45 +8,30 @@
     <div>
         <div style="margin: 0px auto;">
             <form name="convert" action="javascript:update(document.forms.convert);" method="post">
-                <table class="dbc-formtable" id="converttable" data-qa-element="tb_convert_tbl">
+                <table class="dbc-formtable" id="converttable">
                     <tbody>
                         <tr>
                             <td rowspan="3">
                                 <table>
                                     <tbody>
                                         <tr>
-                                            <td colspan="2" class="dbc-formtable-section" data-qa-element="tb_convert_tbl_application_data_lbl">Application data</td>
+                                            <td colspan="2" class="dbc-formtable-section">Application data</td>
                                         </tr>
                                         <tr>
-                                            <td data-qa-element="tb_convert_tbl_z0_lbl">Z<sub>0</sub></td>
-                                            <td class="dbc-rightcell">
-                                                <br>
-                                            </td>
-                                            <td data-qa-element="tb_convert_tbl_z0_unit_lbl">
-                                                <input type="text" name="z0" value="50" data-qa-element="tb_convert_tbl_z0_inputbx" onchange="update_z0(this.form)">
+                                            <td>Z<sub>0</sub></td>
+                                            <td class="dbc-rightcell"><br></td>
+                                            <td>
+                                                <input type="text" name="z0" value="50" onchange="update_z0(this.form)">
                                                 ohms
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td colspan="2" data-qa-element="tb_convert_tbl_waveform_lbl">Waveform</td>
+                                            <td colspan="2">Waveform</td>
                                             <td>
-                                                <select data-qa-element="tb_convert_tbl_waveform_dd" name="correction" onchange="update_vpeak(this.form)">
+                                                <select name="correction" onchange="update_vpeak(this.form)">
                                                     <option value="0">Sine Wave</option>
                                                     <option value="-3.0103">Square Wave</option>
-                                                    <!-- dB -->
                                                     <option value="1.76">Triangular Wave</option>
-                                                    <!--
-                                                    <option value="1.9">QPSK</option>
-                                                    <option value="4">16-QAM</option>
-                                                    <option value="4.4">64-QAM</option>
-                                                    <option value="-3.0103">GSM-GMSK Channel</option>
-                                                    <option value="-3.0103">GPRS</option>
-                                                    <option value="0">GSM-EDGE</option>
-                                                    <option value="1.5">GSM-UMTS</option>
-                                                    <option value="2.00">CDMA 1X Channel, 0.0001%</option>
-                                                    <option value="1.50">CDMA 2000 Channel, 0.0001%</option>
-                                                    <option value="13.5">W-CDMA Channel, 0.0001%</option>
-                                                    -->
                                                     <option value="13.38">Gaussian Noise, 0.0001%</option>
                                                 </select>
                                             </td>
@@ -54,81 +40,73 @@
                                         <tr>
                                             <td colspan="2" class="dbc-formtable-section">Convert</td>
                                         </tr>
-
-
                                         <tr>
                                             <td>V<sub>PEAK-to-PEAK</sub></td>
-                                            <td class="dbc-rightcell"> <br></td>
+                                            <td class="dbc-rightcell"><br></td>
                                             <td>
                                                 <input type="text" name="vpeak2peak" value="1" onchange="update_vpeak2peak(this.form)">
                                                 V
                                             </td>
                                         </tr>
-
-
                                         <tr>
-                                            <td data-qa-element="tb_convert_tbl_vpeak_lbl">V<sub>PEAK</sub></td>
-                                            <td class="dbc-rightcell"> <br></td>
-                                            <td data-qa-element="tb_convert_tbl_vpeak_unit_lbl">
-                                                <input type="text" name="vpeak" value="1" data-qa-element="tb_convert_tbl_vpeak_inputbx" onchange="update_vpeak(this.form)">
+                                            <td>V<sub>PEAK</sub></td>
+                                            <td class="dbc-rightcell"><br></td>
+                                            <td>
+                                                <input type="text" name="vpeak" value="1" onchange="update_vpeak(this.form)">
                                                 V
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td data-qa-element="tb_convert_tbl_vrms_lbl">V<sub>RMS</sub></td>
+                                            <td>V<sub>RMS</sub></td>
                                             <td class="dbc-rightcell"><br></td>
-                                            <td data-qa-element="tb_convert_tbl_vrms_unit_lbl">
-                                                <input type="text" name="vrms" value="0.707" data-qa-element="tb_convert_tbl_vrms_inputbx" onchange="update_vrms(this.form)">
-                                                V<br>
+                                            <td>
+                                                <input type="text" name="vrms" value="0.707" onchange="update_vrms(this.form)">
+                                                V
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td data-qa-element="tb_convert_tbl_power_lbl">Power</td>
-                                            <td class="dbc-rightcell"> <br></td>
-                                            <td data-qa-element="tb_convert_tbl_power_unit_lbl">
-                                                <input type="text" name="power" value="1" data-qa-element="tb_convert_tbl_power_inputbx" onchange="update_power(this.form)">
-                                                W<br>
+                                            <td>Power</td>
+                                            <td class="dbc-rightcell"><br></td>
+                                            <td>
+                                                <input type="text" name="power" value="1" onchange="update_power(this.form)">
+                                                W
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td data-qa-element="tb_convert_tbl_dbm_lbl">dBm</td>
-                                            <td class="dbc-rightcell"> <br></td>
-                                            <td data-qa-element="tb_convert_tbl_dbm_unit_lbl">
-                                                <input type="text" name="dBm" value="80" data-qa-element="tb_convert_tbl_dbm_inputbx" onchange="update_dBm(this.form)">
-                                                dBm<br>
+                                            <td>dBm</td>
+                                            <td class="dbc-rightcell"><br></td>
+                                            <td>
+                                                <input type="text" name="dBm" value="80" onchange="update_dBm(this.form)">
+                                                dBm
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td data-qa-element="tb_convert_tbl_dbu_lbl">dBu</td>
-                                            <td class="dbc-rightcell"> <br></td>
-                                            <td data-qa-element="tb_convert_tbl_dbu_unit_lbl">
-                                                <input type="text" name="dBu" value="20" data-qa-element="tb_convert_tbl_dbu_inputbx" onchange="update_dBu(this.form)">
-                                                dBu<br>
+                                            <td>dBu</td>
+                                            <td class="dbc-rightcell"><br></td>
+                                            <td>
+                                                <input type="text" name="dBu" value="20" onchange="update_dBu(this.form)">
+                                                dBu
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td data-qa-element="tb_convert_tbl_dbv_lbl">dBV<!--&micro;(V)--></td>
-                                            <td class="dbc-rightcell"> <br></td>
-                                            <td data-qa-element="tb_convert_tbl_dbv_unit_lbl">
-                                                <input type="text" name="dBV" value="20" data-qa-element="tb_convert_tbl_dbv_inputbx" onchange="update_dBV(this.form)">
-                                                dBV<!--&micro;(V)--><br>
+                                            <td>dBV</td>
+                                            <td class="dbc-rightcell"><br></td>
+                                            <td>
+                                                <input type="text" name="dBV" value="20" onchange="update_dBV(this.form)">
+                                                dBV
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </td>
-                            
                         </tr>
-                        
-                        
                     </tbody>
                 </table>
             </form>
             <div id="out" style="position: absolute; visibility: visible; height: 130px;"></div>
         </div>
     </div>
-     <script type="text/javascript" src="rci.js"></script>
+    <script type="text/javascript" src="rci.js"></script>
     <script type="text/javascript" src="dbconvert.js"></script>
-
-
-</body></html>
+</body>
+</html>

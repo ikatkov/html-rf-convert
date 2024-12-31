@@ -19,7 +19,7 @@ try {
 }
 
 // Update the start_url field with the new version
-manifest.start_url = `/morse-code/?version=${version}`;
+manifest.start_url = `/html-rf-convert/?version=${version}`;
 
 // Write the updated manifest.json back to the file
 try {

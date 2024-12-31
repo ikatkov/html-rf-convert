@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/ikatkov/html-rf-convert/compare/v1.1.2...v1.2.0) (2024-12-31)
+
+
+### Features
+
+* Change editbox type to number ([1e36910](https://github.com/ikatkov/html-rf-convert/commit/1e369103cd158c1102f050f45af58a947a3f1194))
+
 ## [1.1.2](https://github.com/ikatkov/html-rf-convert/compare/v1.1.1...v1.1.2) (2024-12-31)
 
 

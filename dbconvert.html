@@ -15,29 +15,6 @@
                                 <table>
                                     <tbody>
                                         <tr>
-                                            <td colspan="2" class="dbc-formtable-section">Application data</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Z<sub>0</sub></td>
-                                            <td class="dbc-rightcell"><br></td>
-                                            <td>
-                                                <input type="text" name="z0" value="50" onchange="update_z0(this.form)">
-                                                ohms
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="2">Waveform</td>
-                                            <td>
-                                                <select name="correction" onchange="update_vpeak(this.form)">
-                                                    <option value="0">Sine Wave</option>
-                                                    <option value="-3.0103">Square Wave</option>
-                                                    <option value="1.76">Triangular Wave</option>
-                                                    <option value="13.38">Gaussian Noise, 0.0001%</option>
-                                                </select>
-                                            </td>
-                                        </tr>
-                                        <tr></tr>
-                                        <tr>
                                             <td colspan="2" class="dbc-formtable-section">Convert</td>
                                         </tr>
                                         <tr>
@@ -96,6 +73,30 @@
                                                 dBV
                                             </td>
                                         </tr>
+
+                                        <tr>
+                                            <td colspan="2" class="dbc-formtable-section">Application data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Z<sub>0</sub></td>
+                                            <td class="dbc-rightcell"><br></td>
+                                            <td>
+                                                <input type="text" name="z0" value="50" onchange="update_z0(this.form)">
+                                                ohms
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">Waveform</td>
+                                            <td>
+                                                <select name="correction" onchange="update_vpeak(this.form)">
+                                                    <option value="0">Sine Wave</option>
+                                                    <option value="-3.0103">Square Wave</option>
+                                                    <option value="1.76">Triangular Wave</option>
+                                                    <option value="13.38">Gaussian Noise, 0.0001%</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+
                                     </tbody>
                                 </table>
                             </td>

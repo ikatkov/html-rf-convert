@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/ikatkov/html-rf-convert/compare/v1.1.0...v1.1.1) (2024-12-31)
+
+
+### Bug Fixes
+
+* correct padding ([b8fe73c](https://github.com/ikatkov/html-rf-convert/commit/b8fe73c9aa23673370487db9cf598c1ed1774dcb))
+
 # [1.1.0](https://github.com/ikatkov/html-rf-convert/compare/v1.0.2...v1.1.0) (2024-12-31)
 
 

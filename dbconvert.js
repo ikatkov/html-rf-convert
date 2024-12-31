@@ -1,6 +1,58 @@
 ﻿
 var vpeak2peak, vpeak, vrms, power, dBm, dBu, dBV, z0, correction;
 
+
+function log10(x) {
+    return Math.log(x) / Math.LN10;
+}
+
+function truncate(num) {
+    return Math[num < 0 ? "ceil" : "floor"](num);
+}
+
+function ntz(str) {
+    return str.replace(/\.0+$|\.(\d*?)0+$/, ".$1").replace(/\.$/, "");
+}
+
+function mantissa(num) {
+    return num / Math.pow(10, Math.floor(log10(Math.abs(num))));
+}
+
+function pretty(n, d) {
+    if (n === 0) return "0";
+    if (isNaN(n)) return n + "";
+    if ((n + "").indexOf("Inf") >= 0) return n + "";
+
+    var exp = Math.floor(log10(Math.abs(n)));
+    if (exp < -99) return "0";
+
+    var nm = mantissa(n) * Math.pow(10, d);
+    nm = Math.round(nm) / Math.pow(10, d);
+    if (Math.abs(nm) >= 10) {
+        nm /= 10;
+        exp += 1;
+    }
+
+    var s = n < 0 ? 1 : 0;
+    var ns = (nm * Math.pow(10, d - 1) * Math.pow(10, exp - d + 1)).toFixed(d);
+
+    let result = "";
+    if (exp > 3 || exp < -3) {
+        let nms = nm.toFixed(d);
+        if (nms.substring(0, 1) === ".") nms = "0" + nms;
+        if (nms.substring(0, 2) === "-.") nms = "-0" + nms.substring(1);
+
+        result = ntz(nms) + "e" + exp;
+    } else {
+        if (ns.substring(0, 1) === ".") ns = "0" + ns;
+        if (ns.substring(0, 2) === "-.") ns = "-0" + ns.substring(1);
+
+        if (exp < 0) result = ntz(ns.substring(0, -exp + d + s));
+        else result = ntz(ns.substring(0, Math.max(exp + s + 1, d + s)));
+    }
+    return result;
+}
+
 function parseAll(f) {
     vpeak2peak = Math.abs(parseFloat(f.vpeak2peak.value));
     vpeak = Math.abs(parseFloat(f.vpeak.value));
@@ -109,9 +161,7 @@ function nc(el) {
 }
 
 function init() {
-    preset(document.forms.convert);
     update_vpeak2peak(document.forms.convert);
-    // vgain_changed(document.forms.convert);
 }
 
 if (window.attachEvent)

@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/ikatkov/html-rf-convert/compare/v1.2.0...v1.2.1) (2024-12-31)
+
+
+### Bug Fixes
+
+* smaller subscripts ([dfe0fc6](https://github.com/ikatkov/html-rf-convert/commit/dfe0fc67d5b1aca0214f3bf6c9b1283bc521dedc))
+
 # [1.2.0](https://github.com/ikatkov/html-rf-convert/compare/v1.1.2...v1.2.0) (2024-12-31)
 
 

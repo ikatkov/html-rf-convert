@@ -120,8 +120,8 @@ function addChangeAnimation(element, value) {
     // Remove any existing animations
     element.classList.remove('value-changed', 'error-changed');
     
-    // Add appropriate animation class
-    if (value === "NaN" || isNaN(value)) {
+    // More robust NaN check that works across all browsers
+    if (value === "NaN" || value === "" || Number.isNaN(Number(value))) {
         element.classList.add('error-changed');
     } else {
         element.classList.add('value-changed');
@@ -183,11 +183,6 @@ function npgain_changed(f) {
     var dbgain = npgain * db_per_neper;
     f.dbgain.value = pretty(dbgain, 4);
     f.vgain.value = pretty(Math.pow(10, dbgain / 20), 4);
-}
-
-
-function nc(el) {
-    alert("This is a data output field and can't be changed");
 }
 
 function init() {

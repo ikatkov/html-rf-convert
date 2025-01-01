@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/ikatkov/html-rf-convert/compare/v1.3.1...v1.3.2) (2025-01-01)
+
+
+### Bug Fixes
+
+* **safari mobile:** add -webkit-backdrop-filter ([d816b8a](https://github.com/ikatkov/html-rf-convert/commit/d816b8a5c97ef9a4d2ed993da64815e041959d8b))
+
 ## [1.3.1](https://github.com/ikatkov/html-rf-convert/compare/v1.3.0...v1.3.1) (2025-01-01)
 
 

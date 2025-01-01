@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/ikatkov/html-rf-convert/compare/v1.3.0...v1.3.1) (2025-01-01)
+
+
+### Bug Fixes
+
+* increase form elements length ([42fe86b](https://github.com/ikatkov/html-rf-convert/commit/42fe86bd600cae4d78416c6b4073105507971a06))
+
 # [1.3.0](https://github.com/ikatkov/html-rf-convert/compare/v1.2.1...v1.3.0) (2025-01-01)
 
 

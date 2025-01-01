@@ -1,3 +1,15 @@
+# [1.3.0](https://github.com/ikatkov/html-rf-convert/compare/v1.2.1...v1.3.0) (2025-01-01)
+
+
+### Bug Fixes
+
+* better default value ([43d59a4](https://github.com/ikatkov/html-rf-convert/commit/43d59a429a4b10ad469a5232e600ffcd730c37ef))
+
+
+### Features
+
+* add background image ([3b26a97](https://github.com/ikatkov/html-rf-convert/commit/3b26a97ffcab9fa34452ff7f03907f368b062f18))
+
 ## [1.2.1](https://github.com/ikatkov/html-rf-convert/compare/v1.2.0...v1.2.1) (2024-12-31)
 
 

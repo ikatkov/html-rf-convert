@@ -1,4 +1,3 @@
-
 /* Base styles */
 body {
     font-size: 28px;
@@ -8,19 +7,27 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
     background-color: #f5f7fa;
     color: #2d3748;
+    min-height: 400px;
+    background-image: url('./smith.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 100vh;
+    position: relative;    
 }
 
 table {
     font-size: inherit;
     line-height: inherit;
     width: 100%;
+
 }
 
 .dbc-formtable {
     border: none;
     border-radius: 12px;
     padding: 14px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(3px);
     width: 100%;
     max-width: 800px;
     margin: 0 auto;

@@ -1,3 +1,10 @@
+## [1.3.5](https://github.com/ikatkov/html-rf-convert/compare/v1.3.4...v1.3.5) (2025-05-02)
+
+
+### Bug Fixes
+
+* added link rel="icon" ([3569452](https://github.com/ikatkov/html-rf-convert/commit/356945209f98b436cb920820830470066db7489a))
+
 ## [1.3.4](https://github.com/ikatkov/html-rf-convert/compare/v1.3.3...v1.3.4) (2025-05-02)
 
 

@@ -1,3 +1,10 @@
+## [1.3.4](https://github.com/ikatkov/html-rf-convert/compare/v1.3.3...v1.3.4) (2025-05-02)
+
+
+### Bug Fixes
+
+* remove favicon.ico reference ([e80df68](https://github.com/ikatkov/html-rf-convert/commit/e80df68f7a804ade1fe721b7527c7dd4b934d41b))
+
 ## [1.3.3](https://github.com/ikatkov/html-rf-convert/compare/v1.3.2...v1.3.3) (2025-01-01)
 
 
